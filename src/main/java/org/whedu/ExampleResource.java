@@ -24,9 +24,18 @@ public class ExampleResource {
         dataSet = buffer.toString();
     }
 
+
     @GET
+    @Path("/")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        return "Hello";
+    }
+
+    @GET
+    @Path("/data")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String data() {
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
